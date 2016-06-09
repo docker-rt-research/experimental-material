@@ -43,7 +43,7 @@ cat("###############      MANOVA      ##################\n")
 cat("############### ------Both------ ##################\n")
 
 Y <- cbind(data$odv_oh1,data$pi_calc,data$odv_oh2,data$sleep)
-man <- manova(Y ~ data$deployment + data$kernel + data$load + data$deployment:data$kernel:data$load)
+man <- manova(Y ~ data$deployment + data$kernel + data$load + data$deployment:data$kernel)
 print(summary(man))
 print(etasq(man))
 print(man$coefficients)
